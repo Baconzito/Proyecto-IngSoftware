@@ -9,10 +9,18 @@ namespace L_BLL
 {
     public class BLL_USUARIO
     {
-        public BLL_USUARIO() { Mpp_Usuario = new MPP_USUARIO; }
+        public BLL_USUARIO() { Mpp_Usuario = new MPP_USUARIO(); }
         MPP_USUARIO Mpp_Usuario;
         public bool Agregar()
         {
+            return Mpp_Usuario.Agregar();
+        }
+        public bool Borrar()
+        {
+            return Mpp_Usuario.Modificar();
+        }
+        public bool Modificar() 
+        {  
             return true;
         }
     }
