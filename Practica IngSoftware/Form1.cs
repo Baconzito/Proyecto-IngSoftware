@@ -16,5 +16,16 @@ namespace Practica_IngSoftware
         {
             InitializeComponent();
         }
+
+
+        private void button_Agregar_Click(object sender, EventArgs e)
+        {
+            if(textBox_Nombre.Text == string.Empty || textBox_Contraseña.Text == string.Empty)
+            {
+                MessageBox.Show("Corrobore los campos");
+                return;
+            }
+
+        }
     }
 }
