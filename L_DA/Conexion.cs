@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Data;
+using System.Collections;
 
 namespace L_DA
 {
@@ -15,11 +16,15 @@ namespace L_DA
         SqlTransaction oTransaction;
         SqlCommand oCmd;
 
-        public bool Guardar(string query)
+        public bool Guardar(string query,Hashtable Parametros)
         {
             oCnx.Open();
             oCmd = new SqlCommand(query, oCnx, oTransaction);
             oTransaction = oCnx.BeginTransaction();
+            foreach(string key in Parametros.Keys)
+            {
+                oCmd.Parameters.AddWithValue(key, Parametros[key]);
+            }
             try
             {
                 oCmd.ExecuteNonQuery();
