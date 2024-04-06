@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace L_BE
+namespace L_MPP
 {
-    public class Class1
+    public class MPP_USUARIO
     {
     }
 }
