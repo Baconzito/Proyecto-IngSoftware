@@ -1,4 +1,5 @@
-﻿using L_MPP;
+﻿using L_BE;
+using L_MPP;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,17 +12,17 @@ namespace L_BLL
     {
         public BLL_USUARIO() { Mpp_Usuario = new MPP_USUARIO(); }
         MPP_USUARIO Mpp_Usuario;
-        public bool Agregar()
+        public bool Agregar(Usuario oUsuario)
         {
-            return Mpp_Usuario.Agregar();
+            return Mpp_Usuario.Agregar(oUsuario);
         }
-        public bool Borrar()
+        public bool Borrar(Usuario oUsuario)
         {
-            return Mpp_Usuario.Modificar();
+            return Mpp_Usuario.Modificar(oUsuario);
         }
-        public bool Modificar() 
-        {  
-            return true;
+        public bool Modificar(Usuario oUsuario) 
+        {
+            return Mpp_Usuario.Modificar(oUsuario);
         }
     }
 }

@@ -20,6 +20,7 @@ namespace L_DA
         {
             oCnx.Open();
             oCmd = new SqlCommand(query, oCnx, oTransaction);
+            oCmd.CommandType = CommandType.StoredProcedure;
             oTransaction = oCnx.BeginTransaction();
             foreach(string key in Parametros.Keys)
             {
@@ -45,14 +46,12 @@ namespace L_DA
         {
             DataTable dt = new DataTable();
             oCmd = new SqlCommand(query,oCnx);
+            oCmd.CommandType = CommandType.StoredProcedure;
             using (SqlDataAdapter Da = new SqlDataAdapter(oCmd))
             {
                 Da.Fill(dt);
             }
             return dt;
         }
-
-
-       
     }
 }

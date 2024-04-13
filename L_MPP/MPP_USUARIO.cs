@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using L_BE;
+using System.Collections;
 
 namespace L_MPP
 {
@@ -13,21 +15,30 @@ namespace L_MPP
     {
         public MPP_USUARIO() { oCnx = new Conexion();}
         Conexion oCnx;
-        public bool Agregar()
+        public bool Agregar(Usuario oUsuario)
         {
-            return true;
+            Hashtable ht = new Hashtable();
+            ht.Add("@Nombre", oUsuario.Nombre);
+            ht.Add("@Contraseña", oUsuario.Contraseña);
+            return oCnx.Guardar("Agregar",ht);
         }
-        public bool Borrar()
+        public bool Borrar(Usuario oUsuario)
         {
-            return true;
+            Hashtable ht = new Hashtable();
+            ht.Add("@Id", oUsuario.Id);
+            return oCnx.Guardar("Agregar", ht);
         }
-        public bool Modificar()
+        public bool Modificar(Usuario oUsuario)
         {
-            return true;
+            Hashtable ht = new Hashtable();
+            ht.Add("@Id", oUsuario.Id);
+            ht.Add("@Nombre", oUsuario.Nombre);
+            ht.Add("@Contraseña", oUsuario.Contraseña);
+            return oCnx.Guardar("Agregar", ht);
         }
         public DataTable Leer()
         {
-            return oCnx.Leer("");
+            return oCnx.Leer("Leer");
         }
     }
 }

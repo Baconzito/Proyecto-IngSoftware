@@ -1,4 +1,6 @@
-﻿using System;
+﻿using L_BE;
+using L_BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,16 +17,12 @@ namespace Practica_IngSoftware
         public Form1()
         {
             InitializeComponent();
+            Bll_Usuario = new BLL_USUARIO();
         }
-
+        BLL_USUARIO Bll_Usuario;
 
         private void button_Agregar_Click(object sender, EventArgs e)
         {
-            if(textBox_Nombre.Text == string.Empty || textBox_Contraseña.Text == string.Empty)
-            {
-                MessageBox.Show("Corrobore los campos");
-                return;
-            }
 
         }
     }
