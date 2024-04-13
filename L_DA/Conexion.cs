@@ -12,7 +12,7 @@ namespace L_DA
 {
     public class Conexion
     {
-        SqlConnection oCnx = new SqlConnection("");
+        SqlConnection oCnx = new SqlConnection(@"Data Source=LAPTOP-BP9IT0ML\\SQLEXPRESS;Initial Catalog=IngSoftware;Integrated Security=True");
         SqlTransaction oTransaction;
         SqlCommand oCmd;
 

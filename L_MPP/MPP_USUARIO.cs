@@ -5,7 +5,6 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
 using L_BE;
 using System.Collections;
 
@@ -26,7 +25,7 @@ namespace L_MPP
         {
             Hashtable ht = new Hashtable();
             ht.Add("@Id", oUsuario.Id);
-            return oCnx.Guardar("Agregar", ht);
+            return oCnx.Guardar("Borrar", ht);
         }
         public bool Modificar(Usuario oUsuario)
         {
@@ -34,7 +33,7 @@ namespace L_MPP
             ht.Add("@Id", oUsuario.Id);
             ht.Add("@Nombre", oUsuario.Nombre);
             ht.Add("@Contraseña", oUsuario.Contraseña);
-            return oCnx.Guardar("Agregar", ht);
+            return oCnx.Guardar("Modificar", ht);
         }
         public DataTable Leer()
         {
