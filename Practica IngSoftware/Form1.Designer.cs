@@ -41,14 +41,14 @@
             // 
             // textBox_Nombre
             // 
-            this.textBox_Nombre.Location = new System.Drawing.Point(79, 120);
+            this.textBox_Nombre.Location = new System.Drawing.Point(63, 120);
             this.textBox_Nombre.Name = "textBox_Nombre";
             this.textBox_Nombre.Size = new System.Drawing.Size(163, 26);
             this.textBox_Nombre.TabIndex = 0;
             // 
             // textBox_Contraseña
             // 
-            this.textBox_Contraseña.Location = new System.Drawing.Point(79, 190);
+            this.textBox_Contraseña.Location = new System.Drawing.Point(63, 190);
             this.textBox_Contraseña.Name = "textBox_Contraseña";
             this.textBox_Contraseña.Size = new System.Drawing.Size(163, 26);
             this.textBox_Contraseña.TabIndex = 1;
@@ -96,7 +96,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(90, 97);
+            this.label1.Location = new System.Drawing.Point(117, 97);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 6;
@@ -105,7 +105,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(90, 167);
+            this.label2.Location = new System.Drawing.Point(102, 167);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 20);
             this.label2.TabIndex = 7;

@@ -7,6 +7,7 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Data;
 using System.Collections;
+using System.Runtime.CompilerServices;
 
 namespace L_DA
 {
@@ -14,6 +15,7 @@ namespace L_DA
     {
         SqlConnection oCnx = new SqlConnection(@"Data Source=LAPTOP-BP9IT0ML\\SQLEXPRESS;Initial Catalog=IngSoftware;Integrated Security=True");
         SqlTransaction oTransaction;
+        
         SqlCommand oCmd;
 
         public bool Guardar(string query,Hashtable Parametros)
