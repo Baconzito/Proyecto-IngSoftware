@@ -7,19 +7,22 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Data;
 using System.Collections;
+using System.Runtime.CompilerServices;
 
 namespace L_DA
 {
     public class Conexion
     {
-        SqlConnection oCnx = new SqlConnection("");
+        SqlConnection oCnx = new SqlConnection(@"Data Source=LAPTOP-BP9IT0ML\\SQLEXPRESS;Initial Catalog=IngSoftware;Integrated Security=True");
         SqlTransaction oTransaction;
+        
         SqlCommand oCmd;
 
         public bool Guardar(string query,Hashtable Parametros)
         {
             oCnx.Open();
             oCmd = new SqlCommand(query, oCnx, oTransaction);
+            oCmd.CommandType = CommandType.StoredProcedure;
             oTransaction = oCnx.BeginTransaction();
             foreach(string key in Parametros.Keys)
             {
@@ -45,14 +48,12 @@ namespace L_DA
         {
             DataTable dt = new DataTable();
             oCmd = new SqlCommand(query,oCnx);
+            oCmd.CommandType = CommandType.StoredProcedure;
             using (SqlDataAdapter Da = new SqlDataAdapter(oCmd))
             {
                 Da.Fill(dt);
             }
             return dt;
         }
-
-
-       
     }
 }
