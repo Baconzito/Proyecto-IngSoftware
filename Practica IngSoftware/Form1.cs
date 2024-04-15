@@ -23,7 +23,6 @@ namespace Practica_IngSoftware
 
         private void button_Agregar_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
